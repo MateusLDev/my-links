@@ -82,8 +82,4 @@ export default class App extends Vue {
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 500 !important;
 }
-
-.text-center {
-  text-align: center !important;
-}
 </style>
