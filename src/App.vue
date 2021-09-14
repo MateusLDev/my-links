@@ -1,11 +1,14 @@
 <template>
-  <v-app id="links-wrapper">
+  <v-app id="links-wrapper" class="d-flex justify-center">
     <v-container>
       <v-main>
         <v-card class="card-links mx-auto pb-6 elevation-10" max-width="380px">
           <v-img height="130" src="@/assets/bg-pattern-card.svg"></v-img>
           <v-avatar class="person-image ml-auto" size="90">
-            <v-img src="@/assets/image-victor.jpg"></v-img>
+            <v-img
+              src="@/assets/image-victor.jpg"
+              alt="Mateus Profile Pic"
+            ></v-img>
           </v-avatar>
           <v-card-title class="person-name justify-center mt-8"
             >Mateus Lopes, <span class="person-age"> 19</span></v-card-title
@@ -51,6 +54,21 @@ export default class App extends Vue {
 }
 </script>
 <style>
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: url('./assets/fonts/KumbhSans-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Kumbh Sans Medium';
+  src: url('./assets/fonts/KumbhSans-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Kumbh Sans Bold';
+  src: url('./assets/fonts/KumbhSans-Bold.ttf') format('opentype');
+}
+
 #links-wrapper {
   background: linear-gradient(
     60deg,
@@ -58,7 +76,6 @@ export default class App extends Vue {
     rgba(124, 129, 148, 1) 88%
   );
   width: 100%;
-  height: 100vh;
 }
 
 .card-links {
@@ -69,17 +86,17 @@ export default class App extends Vue {
   position: absolute !important;
   border: 4px solid #fff;
   top: 85px;
-  left: 148px;
+  left: calc(50% - 43px);
 }
 
 .person-name {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Kumbh Sans Bold', sans-serif;
   font-weight: 700 !important;
 }
 
 .person-age {
   color: rgba(0, 0, 0, 0.6);
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Kumbh Sans Medium', sans-serif;
   font-weight: 500 !important;
 }
 </style>
