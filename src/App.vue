@@ -2,7 +2,7 @@
   <v-app id="links-wrapper">
     <v-container>
       <v-main>
-        <v-card class="card-links mx-auto elevation-10" max-width="400px">
+        <v-card class="card-links mx-auto pb-6 elevation-10" max-width="380px">
           <v-img height="130" src="@/assets/bg-pattern-card.svg"></v-img>
           <v-avatar class="person-image ml-auto" size="90">
             <v-img src="@/assets/image-victor.jpg"></v-img>
@@ -13,21 +13,8 @@
           <v-card-subtitle class="person-profession d-flex justify-center"
             >Frontend Developer</v-card-subtitle
           >
-          <div class="person-social d-flex justify-space-around">
-            <a href="https://github.com/MateusLDev">
-              <v-icon>mdi-github</v-icon>
-            </a>
-            <a href="https://www.instagram.com/mtszc/">
-              <v-icon>mdi-instagram</v-icon>
-            </a>
-            <a href="https://www.twitch.tv/mxteuslopxes">
-              <v-icon>mdi-twitch</v-icon>
-            </a>
-          </div>
-          <div class="links-list d-flex flex-column mx-4">
-            <a class="link-list px-4 py-2 mb-4">aaaa</a>
-            <a class="link-list px-4 py-2">bbb</a>
-          </div>
+          <SocialMedias :socialMedias="socialMediaItems" />
+          <PersonalLinks :personalLinks="personalLinkItems" />
         </v-card>
       </v-main>
     </v-container>
@@ -37,8 +24,31 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-@Component({})
-export default class App extends Vue {}
+
+import SocialMedias from '@/components/SocialMedias.vue';
+import PersonalLinks from '@/components/PersonalLinks.vue';
+
+import SocialMediasInterface from '@/types/socialMedias';
+import PersonalLinksInterface from '@/types/personalLinks';
+
+@Component({
+  components: {
+    SocialMedias: SocialMedias,
+    PersonalLinks: PersonalLinks,
+  },
+})
+export default class App extends Vue {
+  socialMediaItems: SocialMediasInterface[] = [
+    { url: 'https://github.com/MateusLDev', icon: 'mdi-github' },
+    { url: 'https://www.instagram.com/mtszc/', icon: 'mdi-instagram' },
+    { url: 'https://www.twitch.tv/mxteuslopxes', icon: 'mdi-twitch' },
+  ];
+  personalLinkItems: PersonalLinksInterface[] = [
+    { url: 'https://github.com/MateusLDev', text: 'aaa' },
+    { url: 'https://www.instagram.com/mtszc/', text: 'bbb' },
+    { url: 'https://www.twitch.tv/mxteuslopxes', text: 'ccc' },
+  ];
+}
 </script>
 <style>
 #links-wrapper {
@@ -59,7 +69,7 @@ export default class App extends Vue {}
   position: absolute !important;
   border: 4px solid #fff;
   top: 85px;
-  left: 155px;
+  left: 148px;
 }
 
 .person-name {
@@ -71,21 +81,6 @@ export default class App extends Vue {}
   color: rgba(0, 0, 0, 0.6);
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 500 !important;
-}
-
-.person-social {
-  margin: 0 auto;
-  width: 200px;
-}
-
-.person-social a {
-  color: none;
-  text-decoration: none;
-}
-
-.link-list {
-  border: 1px solid #868686;
-  border-radius: 20px;
 }
 
 .text-center {
