@@ -1,5 +1,7 @@
 <template>
   <v-app id="links-wrapper" class="d-flex justify-center">
+    <img src="@/assets/bg-pattern-top.svg" class="pattern-top" />
+    <img src="@/assets/bg-pattern-bottom.svg" class="pattern-bottom" />
     <v-container>
       <v-main>
         <v-card class="card-links mx-auto pb-6 elevation-10" max-width="380px">
@@ -47,9 +49,9 @@ export default class App extends Vue {
     { url: 'https://www.twitch.tv/mxteuslopxes', icon: 'mdi-twitch' },
   ];
   personalLinkItems: PersonalLinksInterface[] = [
-    { url: 'https://github.com/MateusLDev', text: 'aaa' },
-    { url: 'https://www.instagram.com/mtszc/', text: 'bbb' },
-    { url: 'https://www.twitch.tv/mxteuslopxes', text: 'ccc' },
+    { url: 'https://github.com/MateusLDev', text: 'Portfolio' },
+    { url: 'https://github.com/MateusLDev', text: 'Pingback' },
+    { url: 'https://www.instagram.com/mtszc/', text: 'Desbugando.dev' },
   ];
 }
 </script>
@@ -69,6 +71,11 @@ export default class App extends Vue {
   src: url('./assets/fonts/KumbhSans-Bold.ttf') format('opentype');
 }
 
+html {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 #links-wrapper {
   background: linear-gradient(
     60deg,
@@ -76,6 +83,22 @@ export default class App extends Vue {
     rgba(124, 129, 148, 1) 88%
   );
   width: 100%;
+}
+
+.pattern-top {
+  width: 60%;
+  position: absolute;
+  top: -400px;
+  left: -200px;
+  overflow: hidden;
+}
+
+.pattern-bottom {
+  width: 60%;
+  position: absolute;
+  bottom: -400px;
+  right: -200px;
+  overflow: hidden;
 }
 
 .card-links {
@@ -98,5 +121,9 @@ export default class App extends Vue {
   color: rgba(0, 0, 0, 0.6);
   font-family: 'Kumbh Sans Medium', sans-serif;
   font-weight: 500 !important;
+}
+
+.w-100 {
+  width: 100% !important;
 }
 </style>

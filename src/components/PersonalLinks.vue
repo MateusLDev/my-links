@@ -5,7 +5,7 @@
       v-for="item in personalLinks"
       :key="item.id"
     >
-      <a :href="item.url">{{ item.text }}</a>
+      <a :href="item.url" class="text-center">{{ item.text }}</a>
     </div>
   </div>
 </template>
