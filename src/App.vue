@@ -48,6 +48,7 @@ export default class App extends Vue {
     { url: 'https://www.instagram.com/mtszc/', icon: 'mdi-instagram' },
     { url: 'https://www.twitch.tv/mxteuslopxes', icon: 'mdi-twitch' },
   ];
+
   personalLinkItems: PersonalLinksInterface[] = [
     { url: 'https://github.com/MateusLDev', text: 'Portfolio' },
     { url: 'https://github.com/MateusLDev', text: 'Pingback' },
